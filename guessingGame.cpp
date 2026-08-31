@@ -6,6 +6,10 @@ int main(){
   int targetNum = 0;
   int guesses = 0;
   int currentGuess = 0;
+  char prompt[20] = "Guess: ";
+  char winMessage[40] = "You guessed it! Guesses: ";
+  char playAgainPrompt[20] = "Play again? (y/n)";
+  char userInput = 'y';
   srand(time(NULL));
   do {
     //cout << "Before Random: " << targetNum << endl;
@@ -13,14 +17,15 @@ int main(){
     //cout << "After Random: " << targetNum;
 
     do{
-      cout << "Guess: "
+      cout << prompt;
       cin >> currentGuess;
       guesses++;
     }while(currentGuess != targetNum);
 
-    cout << "Guesses: " << guesses << endl;
+    cout << winMessage  << guesses << endl;
+    cout << playAgainPrompt << endl;
+    cin >> userInput;
     
-    
-  }while();
+  }while(userInput == 'y');
   return 0;
 }
