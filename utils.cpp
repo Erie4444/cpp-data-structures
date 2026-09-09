@@ -1,0 +1,21 @@
+#include "utils.h"
+#include <iostream>
+#include <limits>
+
+using namespace std;
+
+void clearCINBuffer(){
+  cin.clear();
+  cin.ignore(numeric_limits<streamsize>::max(),'\n');
+}
+
+bool verifyCIN(){
+  if (cin.fail()){
+    clearCINBuffer();
+    return false;
+    
+  } else if (cin.peek() != EOF && cin.peek() != '\n'){
+    clearCINBuffer();
+  }
+  return true;
+}
