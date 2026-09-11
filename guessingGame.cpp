@@ -51,6 +51,8 @@ int main(){
   srand(time(NULL)); //setting the rand seed
   //main game loop
   do {
+    //reset guess count for each game
+    guesses = 0;
     targetNum = rand()%101; //set number to a number between 0 & 100
     //loop to continuously ask the user for an input if they are wrong
     do{
