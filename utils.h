@@ -3,5 +3,8 @@
 
 void flushCINBuffer();
 bool verifyCIN();
+template <typename T>
+void prompt(char promptMsg[],T variable);
+
 
 #endif

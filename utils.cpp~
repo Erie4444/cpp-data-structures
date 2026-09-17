@@ -14,16 +14,8 @@ bool verifyCIN(){
     clearCINBuffer();
     return false;
     
-  } else if (cin.peek() != EOF && cin.peek() != '\n'){
+  } else if (cin.peek != EOF && cin.peek != '\n'){
     clearCINBuffer();
   }
   return true;
-}
-
-template <typename T>
-void prompt(char promptMsg[81], T variable){
-  do{
-    cout << promptMsg;
-    cin >> *variable;
-  }while(!verifyCIN);
 }
