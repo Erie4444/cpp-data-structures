@@ -20,8 +20,10 @@ void add(vector<Student>* list){
   int ID = 0;
   int GPA = 0;
 
-  prompt (firstNamePrompt,firstName);
-  cout << firstName;
+  prompt(firstNamePrompt,firstName);
+  cout << firstName << endl;
+  prompt(IDPrompt,ID);
+  cout << ID << endl;
 }
   
 int main(){

@@ -19,11 +19,3 @@ bool verifyCIN(){
   }
   return true;
 }
-
-template <typename T>
-void prompt(char promptMsg[81], T variable){
-  do{
-    cout << promptMsg;
-    cin >> *variable;
-  }while(!verifyCIN);
-}
