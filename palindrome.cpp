@@ -1,3 +1,8 @@
+/*
+Eric Zhao
+9/24/2026
+Takes in a input and checks if its a palindrome
+ */
 #include <iostream>
 #include <cctype>
 #include <cstring>
@@ -11,17 +16,19 @@ int main(){
   char backward[81] = "";
   char trueMsg[] = "Palindrome.";
   char falseMsg[] = "Not a palindrome.";
+  char prompt[] = "Enter a word to see if it's a palindrome >> ";
   bool inputFail = false;
 
   //cin verification
   do{
     inputFail = false;
+    cout << prompt;
     cin.get(userInput,81);
 
     if (cin.fail()){
       inputFail = true;
       cin.clear();
-      cin.ignore(numeric_limits<streamsize>::max(),'\n')
+      cin.ignore(numeric_limits<streamsize>::max(),'\n');
     }
   } while(inputFail);
 
