@@ -9,21 +9,24 @@ struct Student{
   int ID;
   float GPA;
 };
-
 void add(vector<Student>* list){
   char firstNamePrompt[] = "Please enter the student's first name >> ";
   char lastNamePrompt[] = "Please enter the student's last name >> ";
   char IDPrompt[] = "Please enter the student's ID >> ";
   char GPAPrompt[] = "Please enter the student's GPA >> ";
+  char confirmation[] = "student added!";
   char firstName[81];
   char lastName[81];
   int ID = 0;
   int GPA = 0;
 
   prompt(firstNamePrompt,firstName);
-  cout << firstName << endl;
+  prompt(lastNamePrompt,lastName);
   prompt(IDPrompt,ID);
-  cout << ID << endl;
+  prompt(GPAPrompt,GPA);
+  Student* student = new Student{firstName,lastName,ID,GPA};
+  list->push_back(student);
+  cout << confirmation << endl;
 }
   
 int main(){
