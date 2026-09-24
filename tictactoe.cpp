@@ -1,3 +1,8 @@
+/*
+Eric Zhao
+9/24/26
+A tictactoe game played by 2 players
+ */
 #include <iostream>
 #include <limits>
 #include "utils.h"
