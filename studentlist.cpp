@@ -31,12 +31,12 @@ void add(vector<Student*>* list){
   student -> ID = ID;
   student -> GPA = GPA;
   list->push_back(student);
-  cout << student << endl;
   cout << confirmation << endl;
 }
   
 int main(){
-  vector<Student> list;
-  add(list);
+  vector<Student*> list;
+  add(&list);
+  cout << list[0] -> firstName << endl;
   return 0;
 }
