@@ -33,6 +33,14 @@ void add(vector<Student*>* list){
   list->push_back(student);
   cout << confirmation << endl;
 }
+
+void del(vector<Student*> list){
+  char IDPrompt[] = "Please enter the ID of the student you want to delete >> ";
+  int ID = 0;
+
+  prompt(IDPrompt, ID);
+  
+}
   
 int main(){
   vector<Student*> list;
