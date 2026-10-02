@@ -88,11 +88,25 @@ void del(vector<Student*>* list){
 }
 
 void quit(vector<Student*>* list){
-  list.clear();
+  list -> clear();
 }
 int main(){
   vector<Student*> list;
+  char commands[4][81] = {
+    "ADD",
+    "DELETE",
+    "PRINT",
+    "QUIT"
+  };
+  char userPrompt[47] = "Enter a command (ADD, DELETE, PRINT, QUIT) >> ";
+  char userInput[81];
   bool running = true;
+  do{
+    prompt(userPrompt,userInput,commands);
+    if(userPrompt == "QUIT"){
+      running = false;
+    }
+  }while(running);
   
   return 0;
 }
