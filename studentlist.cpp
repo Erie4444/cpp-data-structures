@@ -3,6 +3,7 @@
 #include <cstring>
 #include <iomanip>
 #include <algorithm>
+#include <iterator>
 #include "utils.h"
 using namespace std;
 
@@ -31,9 +32,14 @@ struct Student{
 
 void print(vector<Student*> list){
   char separator[3] = ", ";
+  char noItemsMsg[30] = "No students currently in list";
   for (vector<Student*>::iterator it = list.begin(); it != list.end(); ++it){
     (*it) -> printInfoOneLine();
   }
+  if (list.size() == 0){
+    cout << noItemsMsg << endl;
+  }
+  
 }
 
 Student* findStudent(int ID, vector<Student*> list){
@@ -79,8 +85,10 @@ void del(vector<Student*>* list){
   char invalidID[21] = "Student ID not found";
   int ID = 0;  
   prompt(IDPrompt, ID);
-  if (findStudent(ID, *list)){
+  Student* toDelete = findStudent(ID, *list);
+  if (toDelete){
     list -> erase(remove_if(list -> begin(),list -> end(), [ID](Student* student){return student -> ID == ID;}));
+    delete toDelete;
     cout << confirmation << endl;
   } else{
     cout << invalidID << endl;
@@ -92,19 +100,27 @@ void quit(vector<Student*>* list){
 }
 int main(){
   vector<Student*> list;
-  char commands[4][81] = {
-    "ADD",
-    "DELETE",
-    "PRINT",
-    "QUIT"
-  };
   char userPrompt[47] = "Enter a command (ADD, DELETE, PRINT, QUIT) >> ";
+  char invalidInput[16] = "Invalid command";
+  char addCommand[4] = "ADD";
+  char deleteCommand[7] = "DELETE";
+  char printCommand[6] = "PRINT";
+  char quitCommand[5] = "QUIT";
   char userInput[81];
   bool running = true;
   do{
-    prompt(userPrompt,userInput,commands);
-    if(userPrompt == "QUIT"){
+    prompt(userPrompt,userInput);
+    if (!strcmp(userInput, addCommand)){
+      add(&list);
+    } else if (!strcmp(userInput,deleteCommand)){
+      del(&list);
+    } else if (!strcmp(userInput,printCommand)){
+      print(list);
+    } else if (!strcmp(userInput,quitCommand)){
+      quit(&list);
       running = false;
+    } else{
+      cout << invalidInput << endl;
     }
   }while(running);
   

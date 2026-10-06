@@ -1,6 +1,7 @@
 #include "utils.h"
 #include <iostream>
 #include <limits>
+#include <cctype>
 
 using namespace std;
 
