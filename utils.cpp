@@ -20,3 +20,17 @@ bool verifyCIN(){
   }
   return true;
 }
+
+bool verifyWholeCIN(){
+  if (cin.fail() || (cin.peek() != EOF && cin.peek() != '\n')){
+    clearCINBuffer();
+    return false;
+  }
+  return true;
+}
+char* lower(char input[]){
+  for (int i = 0; input[i] != '\0'; i++){
+    input[i] = tolower(static_cast<unsigned char>(input[i]));
+  }
+  return input;
+}
