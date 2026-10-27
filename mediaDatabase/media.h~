@@ -1,0 +1,14 @@
+#ifndef MEDIA_H
+#define MEDIA_H
+
+#include <iostream>
+
+class Media{
+ private:
+  char title[];
+  int year;
+ public:
+  Media()
+}
+
+#endif
