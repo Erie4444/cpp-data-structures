@@ -5,7 +5,7 @@ A tictactoe game played by 2 players
  */
 #include <iostream>
 #include <limits>
-#include "utils.h"
+#include "../utils/utils.h"
 
 using namespace std;
 

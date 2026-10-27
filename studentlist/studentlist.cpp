@@ -10,7 +10,7 @@
 #include <iomanip>
 #include <algorithm>
 #include <iterator>
-#include "utils.h"
+#include "../utils/utils.h"
 using namespace std;
 
 struct Student{
