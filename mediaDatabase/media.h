@@ -1,20 +1,17 @@
 #ifndef MEDIA_H
 #define MEDIA_H
 
-#include <iostream>
-
 class Media{
  private:
-  char title[];
+  char* title;
   int year;
  public:
-  Media(char title[], int year);
-  Media(const Media& source);
+  Media(char* title, int year);
   Media& operator=(const Media& source);
+  Media(const Media& source);
   ~Media();
-
-  virtual int getYear();
-  virtual char* getTitle();
-}
+  void print();
+  void assign(char*title,int year);
+};
 
 #endif

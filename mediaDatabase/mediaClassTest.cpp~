@@ -1,0 +1,14 @@
+#include <iostream>
+#include "Media.h"
+using namespace std;
+
+
+int main(){
+  //testing instantiating the Media class
+  char hkTitle[14] = "Hollow Knight";
+  int hkYear = 2017;
+  Media* hk = new Media(hkTitle,hkYear);
+  hk->print();
+  delete hk;
+  return 0;
+}
