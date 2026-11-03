@@ -12,6 +12,8 @@ class Media{
   ~Media();
   void print();
   void assign(char*title,int year);
+  char* getTitle() const;
+  int getYear() const;
 };
 
 #endif

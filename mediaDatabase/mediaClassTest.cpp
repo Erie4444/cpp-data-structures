@@ -1,5 +1,7 @@
 #include <iostream>
+#include <cstring>
 #include "Media.h"
+
 using namespace std;
 
 
@@ -12,12 +14,15 @@ int main(){
   char constructorMsg[17] = "constructor test";
   char copyMsg[10] = "copy test";
   char assignmentMsg[12] = "assign test";
+  char passedMsg[9] = "Passed: ";
   int hkYear = 2017;
   int hkvYear = 2018;
   int ssYear = 2025;
   Media* hk = new Media(hkTitle,hkYear);
   cout << constructorMsg << endl;
   hk->print();
+  cout << passedMsg << (strcmp(hkTitle,hk->getTitle()) == 0 && hk->getYear() == hkYear) << endl;
+  cout << endl;
 
   cout << copyMsg << endl;
   Media* hkv = new Media((*hk));
@@ -27,11 +32,12 @@ int main(){
   cout << reassignMsg << endl;
   hk->print();
   hkv->print();
-
+  cout << passedMsg << (strcmp(hkTitle, hk->getTitle()) == 0 && hk->getYear() == hkYear && strcmp(hkvTitle, hkv->getTitle()) == 0 && hkv->getYear() == hkvYear) << endl;
+  cout << endl;
+  
   cout << assignmentMsg << endl;
-  Media* ss = new Media(ssTitle,ssYear);
-  ss->print();
-  ss=hk;
+  Media* ss = new Media(hkvTitle,hkvYear);
+  (*ss)=(*hk);
   cout << reassignMsg << endl;
   hk->print();
   ss->print();
@@ -39,9 +45,10 @@ int main(){
   cout << reassignMsg << endl;
   hk->print();
   ss->print();
+  cout << passedMsg << (strcmp(hkTitle, hk->getTitle()) == 0 && hk->getYear() == hkYear && strcmp(ssTitle,ss->getTitle()) == 0 && ss->getYear() == ssYear) << endl;
 
   delete hk;
-  delete hkv;
   delete ss;
+  delete hkv;
   return 0;
 }

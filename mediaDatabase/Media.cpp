@@ -29,8 +29,7 @@ Media& Media::operator=(const Media& source){
 }
 //destructor
 Media::~Media(){
-  delete[] this->title;
-}
+  delete[] this->title;}
 
 void Media::print(){
   char titleMsg[8] = "Title: ";
@@ -42,5 +41,13 @@ void Media::print(){
 void Media::assign(char* title, int year){
   strcpy(this->title,title);
   this->year = year;
+}
+
+char* Media::getTitle() const {
+  return this -> title;
+}
+
+int Media::getYear() const {
+  return this -> year;
 }
 
