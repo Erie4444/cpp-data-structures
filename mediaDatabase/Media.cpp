@@ -29,7 +29,9 @@ Media& Media::operator=(const Media& source){
 }
 //destructor
 Media::~Media(){
-  delete[] this->title;}
+  delete[] this->title;
+  this->title = nullptr;
+}
 
 void Media::print(){
   char titleMsg[8] = "Title: ";

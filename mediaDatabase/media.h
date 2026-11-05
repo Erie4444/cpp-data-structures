@@ -2,7 +2,7 @@
 #define MEDIA_H
 
 class Media{
- private:
+ protected:
   char* title;
   int year;
  public:
@@ -12,6 +12,7 @@ class Media{
   ~Media();
   void print();
   void assign(char*title,int year);
+  
   char* getTitle() const;
   int getYear() const;
 };
