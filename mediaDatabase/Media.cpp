@@ -1,4 +1,4 @@
-#include "Media.h"
+cha t#include "Media.h"
 #include <cstring>
 #include <iostream>
 
@@ -43,6 +43,18 @@ void Media::print(){
 void Media::assign(char* title, int year){
   strcpy(this->title,title);
   this->year = year;
+}
+
+void Media::searchByTitle(char* title){
+  if (strcmp(this->title,title) == 0){
+    this -> print();
+  }
+}
+
+void Media::searchByYear(int year){
+  if (this->year == year){
+    this->print();
+  }
 }
 
 char* Media::getTitle() const {
