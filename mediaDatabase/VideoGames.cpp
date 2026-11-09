@@ -1,4 +1,5 @@
 #include "VideoGames.h"
+#include "Media.h"
 #include <cstring>
 #include <iostream>
 
@@ -32,10 +33,11 @@ VideoGames::~VideoGames(){
   this->publisher = nullptr;
 }
 
-void print(){
+void VideoGames::print(){
   char publisherMsg[12] = "Publisher: ";
   char ratingMsg[9] = "Rating: ";
+  char ratingUnits[4] = "/10";
   Media::print();
   cout << publisherMsg << this -> publisher << endl;
-  cout << ratingMsg << this -> rating << endl;
+  cout << ratingMsg << this -> rating << ratingUnits << endl;
 }
