@@ -1,16 +1,18 @@
 #ifndef VIDEOGAMES_H
 #define VIDEOGAMES_H
 
-class VideoGames : public Media{
+#include "Media.h"
+
+class VideoGames : public Media {
  private:
   char* publisher;
-  int rating;
+  float rating;
  public:
-  VideoGames(char* title, int year, char* publisher, int rating) : Media(title, year);
+  VideoGames(char* title, int year, char* publisher, float rating);
   VideoGames& operator=(const VideoGames& source);
-  VideoGames(const VideoGames& source) : Media(source);
+  VideoGames(const VideoGames& source);
   ~VideoGames();
-  void virtual print();
-}
+  void print();
+};
 
 #endif

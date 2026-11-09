@@ -9,8 +9,8 @@ class Media{
   Media(char* title, int year);
   Media& operator=(const Media& source);
   Media(const Media& source);
-  ~Media();
-  void print();
+  virtual ~Media();
+  virtual void print();
   void assign(char* title,int year);
   void searchByTitle(char* title);
   void searchByYear(int year);
