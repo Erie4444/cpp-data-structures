@@ -1,0 +1,36 @@
+#include <iostream>
+#include <cstring>
+#include <vector>
+#include <iterator>
+#include "VideoGames.h"
+#include "Music.h"
+#include "Movies.h"
+#include "Media.h"
+#include "../utils/utils.h"
+
+using namespace std;
+
+void add(vector<Media*>* database){
+  char videoGame[11] = "game";
+  char movie[6] = "movie";
+  char music[6] = "music";
+  char typePrompt[42] = "Media type (Game, Movie, Music) >> ";
+  char type[81] = "";
+  prompt(typePrompt,type);
+
+  if (!strcmp(lower(type),videoGame)){
+    cout << "Game";
+  }
+  if (!strcmp(lower(type),movie)){
+    cout << "Movie";
+  }
+  if (!strcmp(lower(type),music)){
+    cout << "Music";
+  }
+}
+
+int main(){
+  vector<Media*> database;
+  add(&database);
+  return 0;
+}
