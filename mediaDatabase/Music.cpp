@@ -5,6 +5,7 @@
 
 using namespace std;
 
+//constructor inheriting from Media
 Music::Music(char* title, int year, char* artist, char* publisher, int duration) : Media(title, year){
   this -> artist = new char[strlen(artist)+1];
   strcpy(this -> artist, artist);
@@ -13,6 +14,7 @@ Music::Music(char* title, int year, char* artist, char* publisher, int duration)
   this -> duration = duration;
 }
 
+//copy constructor inheriting from Media
 Music::Music(const Music& source) : Media(source){
   this -> artist = new char[strlen(source.artist)+1];
   strcpy(this -> artist, source.artist);
@@ -21,10 +23,12 @@ Music::Music(const Music& source) : Media(source){
   this -> duration  = source.duration;
 }
 
+//assignment overload
 Music& Music::operator=(const Music& source){
   if (this == &source){
     return (*this);
   }
+  //runs the parent overload method
   Media::operator=(source);
   this -> artist = new char[strlen(source.artist)+1];
   strcpy(this -> artist, source.artist);
@@ -34,6 +38,7 @@ Music& Music::operator=(const Music& source){
   return (*this);
 }
 
+//destructor
 Music::~Music(){
   delete[] this -> artist;
   delete[] this -> publisher;
@@ -41,6 +46,7 @@ Music::~Music(){
   this -> publisher = nullptr;
 }
 
+//overridden pring method that adds extra information
 void Music::print(){
   char artistMsg[9] = "Artist: ";
   char publisherMsg[12] = "Publisher: ";

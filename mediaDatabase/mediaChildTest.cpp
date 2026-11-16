@@ -28,7 +28,8 @@ int main(){
   char mcDirector[11] = "Jaren Hess";
   int mcDuration = 6060;
   float mcRating = 5.5;
-  
+
+  //instantiating each of the child media and testing search functionality
   cout << vgMsg << endl;
   Media* media = new VideoGames(hkTitle,hkYear,hkPublisher,hkRating);
   cout << searchByTitleMsg << endl;

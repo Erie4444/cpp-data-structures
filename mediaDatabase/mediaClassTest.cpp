@@ -21,11 +21,13 @@ int main(){
   int hkvYear = 2018;
   int ssYear = 2025;
   Media* hk = new Media(hkTitle,hkYear);
+  //testing the constructor
   cout << constructorMsg << endl;
   //hk->print();
   cout << passedMsg << (strcmp(hkTitle,hk->getTitle()) == 0 && hk->getYear() == hkYear) << endl;
   cout << endl;
 
+  //testing the copy constructor
   cout << copyMsg << endl;
   Media* hkv = new Media((*hk));
   //hk->print();
@@ -36,7 +38,8 @@ int main(){
   //hkv->print();
   cout << passedMsg << (strcmp(hkTitle, hk->getTitle()) == 0 && hk->getYear() == hkYear && strcmp(hkvTitle, hkv->getTitle()) == 0 && hkv->getYear() == hkvYear) << endl;
   cout << endl;
-  
+
+  //testing overloaded assignment
   cout << assignmentMsg << endl;
   Media* ss = new Media(hkvTitle,hkvYear);
   (*ss)=(*hk);
@@ -50,6 +53,8 @@ int main(){
   cout << passedMsg << (strcmp(hkTitle, hk->getTitle()) == 0 && hk->getYear() == hkYear && strcmp(ssTitle,ss->getTitle()) == 0 && ss->getYear() == ssYear) << endl;
   cout << endl;
 
+
+  //testing search methods
   cout << searchByTitleMsg << endl;
   ss->searchByTitle(ssTitle);
   cout << endl;

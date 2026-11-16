@@ -17,6 +17,7 @@ Media::Media(const Media& source){
   strcpy(this->title,source.title);
   this->year = source.year;
 }
+
 //assignment overload
 Media& Media::operator=(const Media& source){
   if (this == &source){
@@ -27,12 +28,15 @@ Media& Media::operator=(const Media& source){
   this->year = source.year;
   return (*this);
 }
+
 //destructor
 Media::~Media(){
   delete[] this->title;
   this->title = nullptr;
 }
 
+//prints out the media's information
+//this is overridden in the children
 void Media::print(){
   char titleMsg[8] = "Title: ";
   char yearMsg[7] = "Year: ";
@@ -40,11 +44,14 @@ void Media::print(){
   cout << yearMsg << this->year << endl;
 }
 
+//used for debugging, this just reassigns the attributes directly
 void Media::assign(char* title, int year){
   strcpy(this->title,title);
   this->year = year;
 }
 
+//search methods just check if they match the requested attribute
+//if yes, they print their information
 void Media::searchByTitle(char* title){
   if (strcmp(this->title,title) == 0){
     this -> print();
@@ -57,6 +64,8 @@ void Media::searchByYear(int year){
   }
 }
 
+
+//getter methods used for searching and deleting
 char* Media::getTitle() const {
   return this -> title;
 }
