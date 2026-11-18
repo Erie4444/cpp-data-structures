@@ -1,0 +1,16 @@
+#ifndef EDGE_H
+#define EDGE_H
+
+#include <iostream>
+#include <unordered_map>
+
+class Node;
+
+class Edge{
+ protected:
+  unordered_map<char, Node> nodes;
+ public:
+  Edge(unordered);
+}
+
+#endif

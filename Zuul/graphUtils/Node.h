@@ -3,7 +3,8 @@
 
 #include <iostream>
 #include <vector>
-#include "Edge.h"
+
+class Edge;
 
 class Node{
  protected:
@@ -13,7 +14,7 @@ class Node{
   Node(int id, vector<Edge*> edges);
   Node(const Node& source);
   Node& operator=(const Node& source);
-  std::ostream& operator<<(std::ostream& os, const Node& node);
+  friend std::ostream& operator<<(std::ostream& os, const Node& node);
   ~Node();
   
 }
