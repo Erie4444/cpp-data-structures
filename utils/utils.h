@@ -25,6 +25,7 @@ void prompt(char promptMsg[], T& variable, bool checkWholeCIN = false){
     cin >> variable;
   }while ((!checkWholeCIN && !verifyCIN()) || (checkWholeCIN && !verifyWholeCIN()));
 }
+void prompt(char promptMsg[], char variable[], int size, bool checkWholeCIN);
 
 char* lower(char input[]);
 

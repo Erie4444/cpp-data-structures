@@ -157,7 +157,8 @@ int main(){
     } else if (!strcmp(userInput,deleteCommand)){
       del(&list);
     } else if (!strcmp(userInput,printCommand)){
-      print(list);
+exit
+  print(list);
     } else if (!strcmp(userInput,quitCommand)){
       quit(&list);
       running = false;

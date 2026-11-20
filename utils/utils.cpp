@@ -30,11 +30,9 @@ bool verifyWholeCIN(){
 }
 
 void prompt(char promptMsg[], char variable[], int size, bool checkWholeCIN = false){
-  //do{
-    cout << promptMsg;
-    cout << "getline";
-    cin.getline(variable, size);
-    //}while ((!checkWholeCIN && !verifyCIN()) || (checkWholeCIN && !verifyWholeCIN()));
+  clearCINBuffer();
+  cout << promptMsg;
+  cin.getline(variable, size);
 }
 
 char* lower(char input[]){
